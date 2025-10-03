@@ -29,3 +29,13 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+// Responsive Hamburger Menu
+const menuToggle = document.getElementById('menu-toggle'); // Add an element with this id for hamburger
+const navMenu = document.querySelector('.nav-menu');
+
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener('click', () => {
+    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+  });
+}
