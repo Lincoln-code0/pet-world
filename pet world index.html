@@ -4,16 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pet World - Responsive</title>
+  <!-- Using Tailwind CSS for a modern, responsive design -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* For the original CSS see previous answer */
+    /* Your original CSS styles go here */
+  </style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="container">
-    <!-- Example logo image; change src as needed -->
-    <img src="images/Your_paragraph_text-removebg-preview.png" alt="Pet World Logo" class="logo" />
+    <img src="images/Your_paragraph_text-removebg-preview.png" alt="site logo" class="logo" />
     <nav class="nav-menu">
       <a href="#get-in-touch" class="smooth-scroll">Home</a>
       <a href="#">Shop</a>
@@ -35,51 +42,63 @@
   </div>
 </section>
 
-<!-- Product grid, bestsellers, features ... same as your original code ... -->
+<!-- PRODUCT SHOWCASE SECTION -->
+<section class="product-showcase-section py-8 sm:py-16">
+    <div class="container">
+        <h2 class="section-title">Our Featured Paw-cessories</h2>
+        <div class="product-grid">
 
-<section class="contact-form-section py-8 sm:py-16" id="get-in-touch">
-  <div class="container">
-    <h2 class="section-title"><span>Get in Touch!</span></h2>
-    <div class="form-container">
-      <form id="contact-form">
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <!-- Example product card repeated -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/14546562928556855287_0" alt="Paw-sitive Vibes Pet Tag" class="product-image">
+                    <span class="product-badge">New</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Paw-sitive Vibes Tag</h3>
+                    <p class="product-description">A vibrant red tag for the happiest pups. Includes custom engraving.</p>
+                    <p class="product-price">299.00 CZK</p>
+                </div>
+            </div>
+            <!-- Repeat more product cards as shown in your original code -->
+
         </div>
-        <button type="submit" class="btn-primary w-full">Subscribe</button>
-      </form>
-      <p id="message" class="form-message"></p>
+    </div>
+</section>
+
+<!-- BESTSELLERS SECTION -->
+<section class="bestsellers-section py-8 sm:py-16 bg-gray-100">
+  <div class="container">
+    <h2 class="section-title"><span>Bestsellers</span></h2>
+    <div class="product-slider">
+      <button id="prev-slide" class="slide-button hidden md:flex" aria-label="Previous Product">&lt;</button>
+      <div class="product-track-container">
+        <div class="product-track">
+          <!-- Example best-seller product card -->
+          <div class="product-card">
+            <span class="product-badge new">New</span>
+            <img src="https://placehold.co/200x200/e89fbe/ffffff?text=Balm" alt="Soothing Paw Balm" class="product-image" />
+            <div class="product-info">
+              <p class="product-category">Pet Care</p>
+              <h3 class="product-name">Pet World Soothing Paw Balm</h3>
+              <div class="product-rating">★★★★☆</div>
+              <p class="product-price">$15.99</p>
+            </div>
+          </div>
+          <!-- Repeat more best-seller product cards as shown in your original code -->
+        </div>
+      </div>
+      <button id="next-slide" class="slide-button hidden md:flex" aria-label="Next Product">&gt;</button>
     </div>
   </div>
 </section>
 
-<script>
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-  // Contact form
-  const contactForm = document.getElementById('contact-form');
-  const emailInput = document.getElementById('email');
-  const messageElement = document.getElementById('message');
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  contactForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const email = emailInput.value.trim();
-    messageElement.textContent = '';
-    messageElement.className = 'form-message';
-    if (emailRegex.test(email)) {
-      messageElement.textContent = 'Thank you for subscribing! Your email is valid.';
-      messageElement.classList.add('success');
-    } else {
-      messageElement.textContent = 'Please enter a valid email address.';
-      messageElement.classList.add('error');
-    }
-  });
-</script>
 
-</body>
-</html>
+<!-- WHY CHOOSE US SECTION -->
+<section class="why-choose-us-section py-8 sm:py-16">
+  <div class="container">
+    <h2 class="section-title"><span>Why Choose Pet World?</span></h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <!-- Example SVG feature icon -->
+        <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#5a8b81" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a64,64,0,0,1-61.1,63.78,8,8,0,0,1-10.12-5,54.28,54.28,0,0,0-41.56,0,8,8,0,0,1-10.12,5A64,64,0,0,1,64,128a64.72,64.72,0,0,1,.49-7.51,8,8,0,0,1,15.33,3.34A48.69,48.69,0,0,0,80,128a48,48,0,0,0,45.16
