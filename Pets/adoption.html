@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet World — Adoption</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24">
+        <circle class="logo-ring" cx="12" cy="12" r="10" stroke-width="2"/>
+        <circle class="logo-inner" cx="12" cy="12" r="5"/>
+        <path d="M12 2a10 10 0 0 0-8 4" fill="var(--color-bg)" stroke="none"/>
+        <path d="M12 2a10 10 0 0 1 8 4"  fill="var(--color-bg)" stroke="none"/>
+      </svg>
+      <span class="logo-text">PET WORLD</span>
+    </a>
+    <nav class="main-nav">
+      <a href="food.html"        class="nav-link">Food &amp; Treats</a>
+      <a href="toys.html"        class="nav-link">Toys &amp; Fun</a>
+      <a href="grooming.html"    class="nav-link">Grooming</a>
+      <a href="accessories.html" class="nav-link">Accessories</a>
+      <a href="vet-care.html"    class="nav-link">Vet Care</a>
+      <a href="adoption.html"    class="nav-link active">Adoption</a>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg id="sun-icon"  xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <a href="login.html" class="icon-btn" aria-label="Login">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <button class="icon-btn" onclick="openCheckoutModal()" aria-label="Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.72a2 2 0 0 0 2-1.58L23 6H6"/></svg>
+        <span id="cart-counter" style="position:absolute;top:-4px;right:-4px;background:var(--color-accent);color:#fff;font-size:0.65rem;font-weight:700;width:1.1rem;height:1.1rem;border-radius:9999px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s;">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding: 3rem 1rem;">
+  <div class="container">
+    <h1 style="font-size:clamp(2rem,5vw,3rem);">🐾 Adopt a Pet</h1>
+    <p>Give a shelter animal their forever home. Browse available pets and start the adoption process today.</p>
+  </div>
+</section>
+
+<section style="padding: 1.5rem 0; border-bottom: 1px solid var(--color-border);">
+  <div class="container">
+    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
+      <a href="#dogs"  class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">🐕 Dogs</a>
+      <a href="#cats"  class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">🐈 Cats</a>
+      <a href="#small" class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">🐇 Small Animals</a>
+      <a href="#process" class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">How to Adopt</a>
+    </div>
+  </div>
+</section>
+
+<main style="padding: 3rem 0 5rem;">
+  <div class="container">
+
+    <section id="dogs" style="margin-bottom:4rem;">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">🐕 Dogs Available</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/8B4513/FFFFFF?text=Max+🐕+2yr" alt="Max the Dog">
+          <div>
+            <h3>Max — Golden Mix, 2 yrs</h3>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.3rem 0;">Friendly, playful, good with kids</p>
+            <p class="product-price" style="font-size:1rem;">Adoption Fee: $80</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="adopt-max" data-name="Adopt Max" data-price="80">Inquire to Adopt</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/696969/FFFFFF?text=Bella+🐕+4yr" alt="Bella the Dog">
+          <div>
+            <h3>Bella — Husky Mix, 4 yrs</h3>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.3rem 0;">Energetic, loves outdoor walks</p>
+            <p class="product-price" style="font-size:1rem;">Adoption Fee: $80</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="adopt-bella" data-name="Adopt Bella" data-price="80">Inquire to Adopt</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/D2691E/FFFFFF?text=Bruno+🐕+1yr" alt="Bruno the Dog">
+          <div>
+            <h3>Bruno — Lab Puppy, 1 yr</h3>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.3rem 0;">Playful pup, very affectionate</p>
+            <p class="product-price" style="font-size:1rem;">Adoption Fee: $100</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="adopt-bruno" data-name="Adopt Bruno" data-price="100">Inquire to Adopt</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/A0522D/FFFFFF?text=Luna+🐕+6yr" alt="Luna the Dog">
+          <div>
+            <h3>Luna — Beagle, 6 yrs</h3>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.3rem 0;">Calm, quiet, great apartment dog</p>
+            <p class="product-price" style="font-size:1rem;">Adoption Fee: $60</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="adopt-luna" data-name="Adopt Luna" data-price="60">Inquire to Adopt</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cats" style="margin-bottom:4rem;">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">🐈 Cats Available</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/FF8C00/FFFFFF?text=Mochi+🐈+1yr" alt="Mochi the Cat">
+          <div>
+            <h3>Mochi — Tabby, 1 yr</h3>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.3rem 0;">Loves cuddles, indoor cat</p>
+            <p class="product-price" style="font-size:1rem;">Adoption Fee: $50</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="adopt-mochi" data-name="Adopt Mochi" data-price="50">Inquire to Adopt</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/808080/FFFFFF?text=Shadow+🐈+3yr" alt="Shadow the Cat">
+          <div>
+            <h3>Shadow — Black Cat, 3 yrs</h3>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.3rem 0;">Independent, playful at night</p>
+            <p class="product-price" style="font-size:1rem;">Adoption Fee: $45</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="adopt-shadow" data-name="Adopt Shadow" data-price="45">Inquire to Adopt</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/FFA07A/000000?text=Peach+🐈+2yr" alt="Peach the Cat">
+          <div>
+            <h3>Peach — Persian Mix, 2 yrs</h3>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.3rem 0;">Very gentle, loves being brushed</p>
+            <p class="product-price" style="font-size:1rem;">Adoption Fee: $65</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="adopt-peach" data-name="Adopt Peach" data-price="65">Inquire to Adopt</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="small" style="margin-bottom:4rem;">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">🐇 Small Animals</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/F5F5DC/555555?text=Bun+🐇+6mo" alt="Rabbit">
+          <div>
+            <h3>Bun — Holland Lop, 6 mo</h3>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.3rem 0;">Gentle, litter trained</p>
+            <p class="product-price" style="font-size:1rem;">Adoption Fee: $35</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="adopt-bun" data-name="Adopt Bun" data-price="35">Inquire to Adopt</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/DEB887/000000?text=Peanut+🐹+1yr" alt="Hamster">
+          <div>
+            <h3>Peanut — Syrian Hamster, 1 yr</h3>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.3rem 0;">Friendly, active at night</p>
+            <p class="product-price" style="font-size:1rem;">Adoption Fee: $15</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="adopt-peanut" data-name="Adopt Peanut" data-price="15">Inquire to Adopt</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/98FB98/000000?text=Kiwi+🐦+2yr" alt="Parrot">
+          <div>
+            <h3>Kiwi — Budgerigar, 2 yrs</h3>
+            <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0.3rem 0;">Talks a little, loves music</p>
+            <p class="product-price" style="font-size:1rem;">Adoption Fee: $40</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="adopt-kiwi" data-name="Adopt Kiwi" data-price="40">Inquire to Adopt</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" style="padding-top:3rem;border-top:1px solid var(--color-border);">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">How to Adopt</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:1rem;">
+        <div class="category-card" style="cursor:default;">
+          <div class="cat-icon">1️⃣</div>
+          <h3>Browse &amp; Choose</h3>
+          <p>Find a pet that matches your lifestyle and living situation</p>
+        </div>
+        <div class="category-card" style="cursor:default;">
+          <div class="cat-icon">2️⃣</div>
+          <h3>Submit Inquiry</h3>
+          <p>Click "Inquire to Adopt" and fill out the adoption application</p>
+        </div>
+        <div class="category-card" style="cursor:default;">
+          <div class="cat-icon">3️⃣</div>
+          <h3>Meet &amp; Greet</h3>
+          <p>Schedule a visit to meet your potential new family member</p>
+        </div>
+        <div class="category-card" style="cursor:default;">
+          <div class="cat-icon">4️⃣</div>
+          <h3>Welcome Home</h3>
+          <p>Complete the adoption fee and bring your new pet home!</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="font-weight:700;font-size:1rem;color:#F9FAFB;margin-bottom:0.5rem;">PET WORLD</p>
+    <p>© 2025 Pet World. All rights reserved.</p>
+    <p style="margin-top:0.5rem;"><a href="../index.html">Home</a> &nbsp;·&nbsp; <a href="vet-care.html">Vet Care</a> &nbsp;·&nbsp; <a href="login.html">Login</a></p>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

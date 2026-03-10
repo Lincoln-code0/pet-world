@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet World — Food &amp; Treats</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24">
+        <circle class="logo-ring" cx="12" cy="12" r="10" stroke-width="2"/>
+        <circle class="logo-inner" cx="12" cy="12" r="5"/>
+        <path d="M12 2a10 10 0 0 0-8 4" fill="var(--color-bg)" stroke="none"/>
+        <path d="M12 2a10 10 0 0 1 8 4"  fill="var(--color-bg)" stroke="none"/>
+      </svg>
+      <span class="logo-text">PET WORLD</span>
+    </a>
+    <nav class="main-nav">
+      <a href="food.html"        class="nav-link active">Food &amp; Treats</a>
+      <a href="toys.html"        class="nav-link">Toys &amp; Fun</a>
+      <a href="grooming.html"    class="nav-link">Grooming</a>
+      <a href="accessories.html" class="nav-link">Accessories</a>
+      <a href="vet-care.html"    class="nav-link">Vet Care</a>
+      <a href="adoption.html"    class="nav-link">Adoption</a>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg id="sun-icon"  xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <a href="login.html" class="icon-btn" aria-label="Login">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <button class="icon-btn" onclick="openCheckoutModal()" aria-label="Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.72a2 2 0 0 0 2-1.58L23 6H6"/></svg>
+        <span id="cart-counter" style="position:absolute;top:-4px;right:-4px;background:var(--color-accent);color:#fff;font-size:0.65rem;font-weight:700;width:1.1rem;height:1.1rem;border-radius:9999px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s;">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<!-- Page Hero -->
+<section class="hero" style="padding: 3rem 1rem;">
+  <div class="container">
+    <h1 style="font-size:clamp(2rem,5vw,3rem);">🥩 Food &amp; Treats</h1>
+    <p>Premium nutrition for every type of pet — from kibble to freeze-dried treats &amp; supplements.</p>
+  </div>
+</section>
+
+
+<!-- Quick Jump Nav -->
+<section style="padding: 1.5rem 0; border-bottom: 1px solid var(--color-border);">
+  <div class="container">
+    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
+      <a href="#dry-food"    class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">Dry Food</a>
+      <a href="#wet-food"    class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">Wet Food</a>
+      <a href="#treats"      class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">Treats</a>
+      <a href="#supplements" class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">Supplements</a>
+      <a href="#small-pets"  class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">Small Pets</a>
+    </div>
+  </div>
+</section>
+
+
+<main style="padding: 3rem 0 5rem;">
+  <div class="container">
+
+    <!-- Dry Food -->
+    <section id="dry-food" style="margin-bottom: 4rem;">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">Dry Food</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/4CAF50/FFFFFF?text=Kibble+Salmon" alt="Grain-Free Kibble">
+          <div>
+            <h3>Grain-Free Kibble (Salmon)</h3>
+            <p class="product-price">$49.99</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-kibble" data-name="Grain-Free Kibble (Salmon)" data-price="49.99">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/228B22/FFFFFF?text=Organic+Kibble" alt="Organic Kibble">
+          <div>
+            <h3>Organic Chicken Kibble</h3>
+            <p class="product-price">$44.99</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-organic-kibble" data-name="Organic Chicken Kibble" data-price="44.99">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/556B2F/FFFFFF?text=Senior+Formula" alt="Senior Dog Food">
+          <div>
+            <h3>Senior Dog Formula (7+)</h3>
+            <p class="product-price">$52.00</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-senior" data-name="Senior Dog Formula (7+)" data-price="52.00">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/8FBC8F/000000?text=Cat+Dry+Food" alt="Cat Dry Food">
+          <div>
+            <h3>Indoor Cat Dry Food</h3>
+            <p class="product-price">$38.50</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-cat-dry" data-name="Indoor Cat Dry Food" data-price="38.50">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wet Food -->
+    <section id="wet-food" style="margin-bottom: 4rem;">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">Wet Food</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/1E90FF/FFFFFF?text=Tuna+Pate" alt="Tuna Pate">
+          <div>
+            <h3>Premium Tuna Pâté (Cat)</h3>
+            <p class="product-price">$3.99</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-tuna-pate" data-name="Premium Tuna Pâté" data-price="3.99">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/4169E1/FFFFFF?text=Beef+Stew" alt="Beef Stew Dog Food">
+          <div>
+            <h3>Hearty Beef Stew (Dog)</h3>
+            <p class="product-price">$4.50</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-beef-stew" data-name="Hearty Beef Stew" data-price="4.50">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/00BFFF/000000?text=Salmon+Broth" alt="Salmon Broth">
+          <div>
+            <h3>Salmon Broth Topper</h3>
+            <p class="product-price">$6.25</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-salmon-broth" data-name="Salmon Broth Topper" data-price="6.25">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/6495ED/FFFFFF?text=Kitten+Mousse" alt="Kitten Mousse">
+          <div>
+            <h3>Kitten Mousse (Chicken)</h3>
+            <p class="product-price">$2.99</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-kitten-mousse" data-name="Kitten Mousse" data-price="2.99">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Treats -->
+    <section id="treats" style="margin-bottom: 4rem;">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">Treats</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/1E90FF/FFFFFF?text=Freeze+Dried+Tuna" alt="Freeze Dried Tuna">
+          <div>
+            <h3>Freeze Dried Tuna Treats</h3>
+            <p class="product-price">$12.50</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-tuna-treats" data-name="Freeze Dried Tuna Treats" data-price="12.50">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/CD853F/FFFFFF?text=Bully+Sticks" alt="Bully Sticks">
+          <div>
+            <h3>Natural Bully Sticks (6")</h3>
+            <p class="product-price">$15.99</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-bully-sticks" data-name="Natural Bully Sticks" data-price="15.99">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/DEB887/000000?text=Dental+Chews" alt="Dental Chews">
+          <div>
+            <h3>Dental Chew Sticks (30pk)</h3>
+            <p class="product-price">$22.00</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-dental-chews" data-name="Dental Chew Sticks" data-price="22.00">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/F4A460/FFFFFF?text=Soft+Training" alt="Soft Training Treats">
+          <div>
+            <h3>Soft Training Treats (Bacon)</h3>
+            <p class="product-price">$9.99</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-training" data-name="Soft Training Treats" data-price="9.99">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supplements -->
+    <section id="supplements" style="margin-bottom: 4rem;">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">Supplements</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/FFD700/000000?text=Joint+Health" alt="Joint Chews">
+          <div>
+            <h3>Advanced Joint Health Chews</h3>
+            <p class="product-price">$29.00</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-joint" data-name="Joint Health Chews" data-price="29.00">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/FFA500/FFFFFF?text=Omega+3+Oil" alt="Omega 3 Oil">
+          <div>
+            <h3>Wild Salmon Omega-3 Oil</h3>
+            <p class="product-price">$24.99</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-omega3" data-name="Wild Salmon Omega-3 Oil" data-price="24.99">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/FF8C00/FFFFFF?text=Probiotic" alt="Probiotic">
+          <div>
+            <h3>Probiotic Powder (30-day)</h3>
+            <p class="product-price">$32.00</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-probiotic" data-name="Probiotic Powder" data-price="32.00">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Small Pets -->
+    <section id="small-pets">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">Small Pets</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/8B4513/FFFFFF?text=Timothy+Hay" alt="Timothy Hay">
+          <div>
+            <h3>Premium Timothy Hay &amp; Pellet Mix</h3>
+            <p class="product-price">$18.75</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-hay" data-name="Timothy Hay & Pellet Mix" data-price="18.75">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/A0522D/FFFFFF?text=Hamster+Mix" alt="Hamster Food">
+          <div>
+            <h3>Hamster &amp; Gerbil Seed Mix</h3>
+            <p class="product-price">$8.99</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-hamster" data-name="Hamster Seed Mix" data-price="8.99">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/D2691E/FFFFFF?text=Bird+Seed" alt="Bird Seed">
+          <div>
+            <h3>Tropical Bird Seed Blend</h3>
+            <p class="product-price">$14.50</p>
+            <button class="btn-primary" onclick="addToCart(this)" data-product-id="food-bird" data-name="Tropical Bird Seed Blend" data-price="14.50">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="font-weight:700;font-size:1rem;color:#F9FAFB;margin-bottom:0.5rem;">PET WORLD</p>
+    <p>© 2025 Pet World. All rights reserved.</p>
+    <p style="margin-top:0.5rem;">
+      <a href="../index.html">Home</a> &nbsp;·&nbsp;
+      <a href="vet-care.html">Vet Care</a> &nbsp;·&nbsp;
+      <a href="adoption.html">Adoption</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

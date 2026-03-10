@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet World — Accessories</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24">
+        <circle class="logo-ring" cx="12" cy="12" r="10" stroke-width="2"/>
+        <circle class="logo-inner" cx="12" cy="12" r="5"/>
+        <path d="M12 2a10 10 0 0 0-8 4" fill="var(--color-bg)" stroke="none"/>
+        <path d="M12 2a10 10 0 0 1 8 4"  fill="var(--color-bg)" stroke="none"/>
+      </svg>
+      <span class="logo-text">PET WORLD</span>
+    </a>
+    <nav class="main-nav">
+      <a href="food.html"        class="nav-link">Food &amp; Treats</a>
+      <a href="toys.html"        class="nav-link">Toys &amp; Fun</a>
+      <a href="grooming.html"    class="nav-link">Grooming</a>
+      <a href="accessories.html" class="nav-link active">Accessories</a>
+      <a href="vet-care.html"    class="nav-link">Vet Care</a>
+      <a href="adoption.html"    class="nav-link">Adoption</a>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg id="sun-icon"  xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <a href="login.html" class="icon-btn" aria-label="Login">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <button class="icon-btn" onclick="openCheckoutModal()" aria-label="Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.72a2 2 0 0 0 2-1.58L23 6H6"/></svg>
+        <span id="cart-counter" style="position:absolute;top:-4px;right:-4px;background:var(--color-accent);color:#fff;font-size:0.65rem;font-weight:700;width:1.1rem;height:1.1rem;border-radius:9999px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s;">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding: 3rem 1rem;">
+  <div class="container">
+    <h1 style="font-size:clamp(2rem,5vw,3rem);">🛍️ Accessories &amp; Comfort</h1>
+    <p>Everything from leashes and beds to smart feeders — for a comfortable, connected pet life.</p>
+  </div>
+</section>
+
+<section style="padding: 1.5rem 0; border-bottom: 1px solid var(--color-border);">
+  <div class="container">
+    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
+      <a href="#leashes-collars" class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">Leashes &amp; Collars</a>
+      <a href="#beds"            class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">Beds</a>
+      <a href="#travel"          class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">Travel</a>
+      <a href="#feeding"         class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">Feeding</a>
+    </div>
+  </div>
+</section>
+
+<main style="padding: 3rem 0 5rem;">
+  <div class="container">
+
+    <section id="leashes-collars" style="margin-bottom:4rem;">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">Leashes &amp; Collars</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/5F9EA0/FFFFFF?text=Neoprene+Leash" alt="Neoprene Leash">
+          <div><h3>Heavy Duty Neoprene Leash</h3><p class="product-price">$19.99</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-leash" data-name="Neoprene Leash" data-price="19.99">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/2E8B57/FFFFFF?text=Retractable" alt="Retractable Leash">
+          <div><h3>Retractable Leash (16ft)</h3><p class="product-price">$24.99</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-retractable" data-name="Retractable Leash" data-price="24.99">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/3CB371/FFFFFF?text=Reflective+Collar" alt="Reflective Collar">
+          <div><h3>Reflective Safety Collar</h3><p class="product-price">$13.50</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-collar" data-name="Reflective Safety Collar" data-price="13.50">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/008080/FFFFFF?text=Harness" alt="Dog Harness">
+          <div><h3>No-Pull Dog Harness</h3><p class="product-price">$34.99</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-harness" data-name="No-Pull Dog Harness" data-price="34.99">Add to Cart</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beds" style="margin-bottom:4rem;">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">Beds &amp; Rest</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/B0C4DE/000000?text=Calming+Bed" alt="Calming Bed">
+          <div><h3>Orthopedic Calming Pet Bed</h3><p class="product-price">$65.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-bed" data-name="Orthopedic Calming Bed" data-price="65.00">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/A2B5CD/000000?text=Cave+Bed" alt="Cave Bed">
+          <div><h3>Cozy Cave Snuggle Bed</h3><p class="product-price">$49.99</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-cave-bed" data-name="Cozy Cave Bed" data-price="49.99">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/8FBC8F/000000?text=Hammock+Bed" alt="Cat Hammock">
+          <div><h3>Window Mounted Cat Hammock</h3><p class="product-price">$38.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-hammock" data-name="Window Cat Hammock" data-price="38.00">Add to Cart</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="travel" style="margin-bottom:4rem;">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">Travel &amp; Carriers</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/DAA520/FFFFFF?text=Soft+Carrier" alt="Soft Carrier">
+          <div><h3>Collapsible Soft-Sided Carrier</h3><p class="product-price">$45.99</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-carrier" data-name="Soft-Sided Carrier" data-price="45.99">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/B8860B/FFFFFF?text=Hard+Shell" alt="Hard Shell Carrier">
+          <div><h3>Airline-Approved Hard Carrier</h3><p class="product-price">$72.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-hard-carrier" data-name="Airline Hard Carrier" data-price="72.00">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/CD853F/FFFFFF?text=Car+Seat" alt="Car Seat">
+          <div><h3>Pet Car Booster Seat</h3><p class="product-price">$55.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-car-seat" data-name="Pet Car Booster Seat" data-price="55.00">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/A0522D/FFFFFF?text=Stroller" alt="Pet Stroller">
+          <div><h3>3-Wheel Foldable Pet Stroller</h3><p class="product-price">$99.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-stroller" data-name="Pet Stroller" data-price="99.00">Add to Cart</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="feeding">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">Feeding &amp; Water</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/6A5ACD/FFFFFF?text=Auto+Feeder" alt="Auto Feeder">
+          <div><h3>Smart WiFi Automatic Feeder</h3><p class="product-price">$89.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-feeder" data-name="Smart Auto Feeder" data-price="89.00">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/7B68EE/FFFFFF?text=Water+Fountain" alt="Water Fountain">
+          <div><h3>Ceramic Pet Water Fountain</h3><p class="product-price">$42.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-fountain" data-name="Pet Water Fountain" data-price="42.00">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/8470FF/FFFFFF?text=Slow+Feeder" alt="Slow Feeder Bowl">
+          <div><h3>Anti-Gulping Slow Feeder Bowl</h3><p class="product-price">$16.99</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="acc-slow-bowl" data-name="Slow Feeder Bowl" data-price="16.99">Add to Cart</button></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="font-weight:700;font-size:1rem;color:#F9FAFB;margin-bottom:0.5rem;">PET WORLD</p>
+    <p>© 2025 Pet World. All rights reserved.</p>
+    <p style="margin-top:0.5rem;"><a href="../index.html">Home</a> &nbsp;·&nbsp; <a href="vet-care.html">Vet Care</a> &nbsp;·&nbsp; <a href="adoption.html">Adoption</a></p>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

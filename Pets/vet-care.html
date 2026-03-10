@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet World — Vet Care</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24">
+        <circle class="logo-ring" cx="12" cy="12" r="10" stroke-width="2"/>
+        <circle class="logo-inner" cx="12" cy="12" r="5"/>
+        <path d="M12 2a10 10 0 0 0-8 4" fill="var(--color-bg)" stroke="none"/>
+        <path d="M12 2a10 10 0 0 1 8 4"  fill="var(--color-bg)" stroke="none"/>
+      </svg>
+      <span class="logo-text">PET WORLD</span>
+    </a>
+    <nav class="main-nav">
+      <a href="food.html"        class="nav-link">Food &amp; Treats</a>
+      <a href="toys.html"        class="nav-link">Toys &amp; Fun</a>
+      <a href="grooming.html"    class="nav-link">Grooming</a>
+      <a href="accessories.html" class="nav-link">Accessories</a>
+      <a href="vet-care.html"    class="nav-link active">Vet Care</a>
+      <a href="adoption.html"    class="nav-link">Adoption</a>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg id="sun-icon"  xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <a href="login.html" class="icon-btn" aria-label="Login">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <button class="icon-btn" onclick="openCheckoutModal()" aria-label="Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.72a2 2 0 0 0 2-1.58L23 6H6"/></svg>
+        <span id="cart-counter" style="position:absolute;top:-4px;right:-4px;background:var(--color-accent);color:#fff;font-size:0.65rem;font-weight:700;width:1.1rem;height:1.1rem;border-radius:9999px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s;">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding: 3rem 1rem;">
+  <div class="container">
+    <h1 style="font-size:clamp(2rem,5vw,3rem);">🩺 Vet Care</h1>
+    <p>Expert veterinary guidance, 24/7 emergency support, and health products for your pet.</p>
+  </div>
+</section>
+
+<section style="padding: 1.5rem 0; border-bottom: 1px solid var(--color-border);">
+  <div class="container">
+    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
+      <a href="#emergency"     class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">Emergency Line</a>
+      <a href="#consultations" class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">Consultations</a>
+      <a href="#health-products" class="quick-nav-item" style="padding:0.5rem 1.25rem;width:auto;">Health Products</a>
+    </div>
+  </div>
+</section>
+
+<main style="padding: 3rem 0 5rem;">
+  <div class="container">
+
+    <!-- Emergency -->
+    <section id="emergency" class="vet-section" style="border:none;padding-top:0;">
+      <h2>24 / 7 Emergency Line</h2>
+      <p>For urgent pet health questions or life-threatening situations, call our dedicated veterinary emergency line immediately.</p>
+      <div class="vet-card">
+        <p>24/7 Vet Emergency Support</p>
+        <a href="tel:+25079203025">+250 79 203 025</a>
+      </div>
+      <p class="vet-note">This line is for emergencies and vet consultations only. For product orders, use the shop pages.</p>
+    </section>
+
+    <!-- Consultations -->
+    <section id="consultations" style="margin-bottom:4rem;padding-top:3rem;border-top:1px solid var(--color-border);">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">Consultation Services</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/20B2AA/FFFFFF?text=Video+Consult" alt="Video Consultation">
+          <div><h3>Video Vet Consultation (30 min)</h3><p class="product-price">$35.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="vet-video" data-name="Video Vet Consultation" data-price="35.00">Book Now</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/008B8B/FFFFFF?text=Diet+Plan" alt="Nutrition Plan">
+          <div><h3>Custom Pet Nutrition Plan</h3><p class="product-price">$55.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="vet-nutrition" data-name="Custom Nutrition Plan" data-price="55.00">Book Now</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/2F4F4F/FFFFFF?text=Dental+Check" alt="Dental Check">
+          <div><h3>Dental Health Assessment</h3><p class="product-price">$28.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="vet-dental" data-name="Dental Health Assessment" data-price="28.00">Book Now</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/556B2F/FFFFFF?text=Wellness+Check" alt="Wellness Check">
+          <div><h3>Annual Wellness Check</h3><p class="product-price">$75.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="vet-wellness" data-name="Annual Wellness Check" data-price="75.00">Book Now</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Health Products -->
+    <section id="health-products">
+      <div class="section-header-row">
+        <h2 class="section-title" style="border:none;margin:0;padding:0;">Health Products</h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/66CDAA/000000?text=Flea+Treatment" alt="Flea Treatment">
+          <div><h3>Monthly Flea &amp; Tick Treatment</h3><p class="product-price">$18.99</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="vet-flea" data-name="Flea & Tick Treatment" data-price="18.99">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/3CB371/FFFFFF?text=Ear+Cleaner" alt="Ear Cleaner">
+          <div><h3>Gentle Ear Cleaning Solution</h3><p class="product-price">$12.50</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="vet-ear" data-name="Ear Cleaning Solution" data-price="12.50">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/2E8B57/FFFFFF?text=First+Aid+Kit" alt="First Aid Kit">
+          <div><h3>Pet First Aid Kit (32-piece)</h3><p class="product-price">$34.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="vet-firstaid" data-name="Pet First Aid Kit" data-price="34.00">Add to Cart</button></div>
+        </div>
+        <div class="product-card">
+          <img src="https://placehold.co/300x300/006400/FFFFFF?text=Calming+Drops" alt="Calming Drops">
+          <div><h3>Natural Calming Drops</h3><p class="product-price">$22.00</p>
+          <button class="btn-primary" onclick="addToCart(this)" data-product-id="vet-calm" data-name="Natural Calming Drops" data-price="22.00">Add to Cart</button></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="font-weight:700;font-size:1rem;color:#F9FAFB;margin-bottom:0.5rem;">PET WORLD</p>
+    <p>© 2025 Pet World. All rights reserved.</p>
+    <p style="margin-top:0.5rem;"><a href="../index.html">Home</a> &nbsp;·&nbsp; <a href="adoption.html">Adoption</a> &nbsp;·&nbsp; <a href="login.html">Login</a></p>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>
